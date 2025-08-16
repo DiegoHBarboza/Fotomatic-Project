@@ -1,0 +1,591 @@
+/* Universal Styles */
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Palatino;
+  src: url(../font/palr45w.ttf);
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+/*----------------------------------*/
+
+/*  TODO - Header */
+
+header {
+  position: fixed;  /*THIS ENSURES THE HEADER IS FIXED*/
+  z-index: 1;       /*THIS ENSURES THE FIXED HEADER STAYS AT THE TOP*/
+  width: 100%;      /*THIS ENSURES DE HEADER OCCUPIES 100% OF THE SCREEN*/
+  border-bottom: solid 1px #c6c1c1; /* HEADER BOTTON BORDER*/
+  background-color: white;          /*HEADER BACKGROUND COLOUR*/
+}
+
+header .content {         /*HEADER MAIN CONTAINER*/
+  display: flex;          /*THIS ENSURES ITEMS ARE IN-LINE*/
+  align-items:start;      /*THIS ALIGN ITEMS VERTICALLY*/
+  padding: 1.875rem;      /*THIS ADD PADDING TO CONTENT - HEADER HEIGHT 85px*/
+  /*border: 2px solid red;*/   /*//ADD BORDER FOR LOCATION*/
+}
+
+header .logo {
+  flex: 1;                  /* !NOT SURE WHAT THIS DOES*/
+  font-family: "Roboto";    /*LOGO FONT*/
+  color: #4a4a4a;
+  font-size: 1.5rem;        /*LOGO FONT SIZE*/          
+  font-weight: 400;         /*LOGO FONT WEIGHT*/
+}
+
+header nav ul {     
+  display: flex;    /*NAV FLEX TO ENSURE UL CHILDREN ARE IN-LINE*/        
+}
+
+nav li {
+  padding-left: 2.5rem;   /*PADDING BETWEN NAV LI*/
+}
+
+nav a {
+  display: flex;              /*ENSURES ITEM CAN BE IN-LINE AND MANIPULATED*/
+  /*vertical-align: bottom;   /* !NOT SURE WHAT THIS DOES*/ 
+  font-family: "Roboto"; 
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  align-items: center;        /*ENSURES ITEMS IN THE NAV A ARE VERTICALLY CENTERED*/
+}
+
+header .icon {                /*UL ICON*/
+  width: auto;             
+  height: 1.2rem;
+  padding-left: .75rem;
+}
+
+
+nav .button {              /*?THIS IS THE JOIN BOTTON FOR OTHER SCREEN SIZES*/   
+  padding: .1875rem .5rem;
+  background-color: #9dc20b;
+  line-height: 1.6;
+  color: white;
+}
+
+nav li:last-child {       /*?THIS ADDRESS THE LAST LI ON THE LIST*/
+  display: none;
+}
+
+
+header .mobile {         /*THIS ADDRESS ITEMS ON THE HEADER THAT MAY NOT BE DISPLAYED*/
+  display: none;        
+}
+
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR HEADER - TABLET*/
+
+@media only screen and (max-width: 895px) {  
+  nav li:last-child {   /*?THIS ADDRESS THE LAST CHILD WHEN SCREEN IS LESS THEN ^ */
+    display: flex;
+  }
+
+  header .content {
+    display: flex;
+    padding: 1rem;   /*THIS ADD PADDING TO CONTENT - HEADER HEIGHT 57px*/
+    align-items: center;
+  }
+
+  header .logo {      /*THIS ENSURE THE LOGO IS CENTERED*/
+    align-items: center;
+  }
+
+  header .desktop li {       /*THIS ENSURE THE LI ARE CENTERED*/
+    display: flex; 
+    padding-left: 1.3rem;     
+  }
+
+  header .desktop li a {    /*THIS ALLOW THE LI CONTENT TO BE BORDERED*/
+    border: 2px solid hsl(0, 0%, 85%);
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+  } 
+
+  header .desktop .button {
+    background-color: #9dc20b;
+    
+  }
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR HEADER - PHONE*/
+
+@media only screen and (max-width: 600px) {
+  header .desktop {            
+    display: none; /*?THIS HIDE THE DESKTOP CONF. WHEN SCREN LESS THAN ^ */
+  }
+
+  header .content {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    width: 17rem;
+    padding: 0.4rem 0rem 0.4rem 0rem;
+  }
+
+  header .mobile {         /*?THIS ENABLE THE MOBILE CLASS*/
+    display: flex;
+    width: 100%;
+  }
+
+  header .mobile-header {
+    display: flex;        /*THIS GIVES FLEX CAPABILITIES TO THE UL CHILDREN*/
+    width: 100%;
+    align-items: center;
+    padding-right: .5rem;
+    justify-content: space-between;
+  }
+
+  header .mobile-header a {
+    display: flex;
+    padding-right: 2rem;
+  }
+
+  header .button {
+    display: flex;                     /*JOIN BOTTON FLEX CAPABILITIES*/
+    justify-content: center;
+    margin-right: 0rem;                /*JOIN BOTTON PADDING*/
+    border-radius: 3px;
+  }
+
+  header .button a {   /*THIS ALLOW THE JOIN BOTTON WIDTH TO BE CONF*/
+    width: 55px;
+    color: white;
+  }
+}
+
+/*----------------------------------*/
+
+/* TODO - MAIN CONTENT SECTION BASIC SETTINGS*/
+
+.main-content {                  /*^THIS CONTAINER HAS THE FULL PAGE*/
+  position: relative;
+  top: 5.3125rem;                /*OFFSET FROM FIXED HEADER*/
+  background-color: whitesmoke;
+}
+
+.center {                       /*THIS CENTER THE TEXT CONTENT FOR THE FULL PAGE*/
+  text-align: center;            
+}
+
+
+/*----------------------------------*/
+
+/* TODO - MAIN CONTENT SECTION*/
+
+
+/* Sign Up Section */
+
+#sign-up-section {               /*THIS IS THE MAIN SECTION*/
+  display: flex;                  
+  align-items: flex-start;       /*KEEP ITEMS AT THE TOP OF THE CONTAINER*/
+  height: 43.5rem;               /*?HEIGHT OF THE BACKGROUND*/
+  background-image: url('../images/banner-landingpage.jpg');
+  background-position: top;   /*IMAGE POSITION IN ITS CONTAINER*/
+  background-size: cover;        /*ENSURE IMAGE COVERS FULL CONTAIER/PAGE*/
+  background-repeat: no-repeat;  /*?PREVENT IMAGE FROM DUPLICATING*/
+  /*border: 2px solid green;*/   /*//ADD BORDER FOR LOCATION*/
+}
+
+#sign-up-cta {
+  margin: 10.625rem 0rem 10.625rem 6.25rem; /**GREEN CONTAINER POSITION*/
+  padding: 2rem 5rem 3.5rem 5rem;           /*CONTANT DISTANCE FORM BORDER*/
+  border: solid 1px #979797; 
+  border-radius: 4px;
+  background-color: #9dc20b;
+}
+
+#sign-up-cta .content {      /**GREEN CONTAINER WIDTH*/                             
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: white;
+}
+
+#sign-up-cta h1 {
+  font-size: 3.125rem;
+}
+
+#sign-up-cta h2 {
+  font-size: 2.25rem;
+}
+
+#sign-up-cta .email {
+  /*border: 2px solid red;*/      /*//ADD BORDER FOR LOCATION*/
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  width: 30rem;
+}
+
+#sign-up-cta span strong {
+  font-weight: bold;
+}
+
+#sign-up-cta .cursive {
+  font-family: "Damion", cursive;
+}
+
+#sign-up-cta .striking {
+  font-family: "Rubik", sans-serif;
+  padding-bottom: .75rem;
+}
+
+#sign-up-cta .button {
+  width: 30rem;                   /*REDUCE SIGN UP BOTTON WIDTH*/
+  justify-self: center;           /*CENTER BOTTON*/ 
+  margin-top: 1.625rem;
+  padding: 1.25rem 7.25rem;
+  border-radius: 4px;
+  background-color: #4a4a4a;
+  color: white;
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR - TABLET*/
+
+@media only screen and (max-width: 895px) {
+  .main-content {
+    display: block;                  /*THIS ENABLED THE BETTER ALIGNMENT OF THE TEXT*/
+    /*border: 3px solid violet;*/      /*//ADD BORDER FOR LOCATION*/
+  }
+
+  #sign-up-section {                 /*THIS IS THE MAIN SECTION*/
+    height: 20rem;                   /*THIS REDUCE THE SIZE OF THE CONTAINER*/
+    position: relative;
+    top: -19px;                      /*THIS BRINGS IMAGE CLOSER TO HEADER*/
+    background-image: url('../images/banner-landingpage.jpg');
+    background-size: cover;          /*THIS ENSURE IMAGE COVERS THE ENTIRE CONTAINER*/
+    background-position: top;        /*IMAGE STARTING POINT IN THE CONTAINER*/
+    justify-content: center;         /*TEXT CENTRILIZED*/
+    align-items: center;             /*TEXT CENTRILIZED*/
+  }
+
+  #sign-up-cta {
+    padding: 0px;
+    margin: 0px;                        
+    background-color: transparent;       /* REMOVE GREEN BACKGROUND FROM VIEW*/
+    border: none;                        /* REMOVE GREEN BACKGROUND BORDER FROM VIEW*/
+  }
+
+  #sign-up-cta .content {
+    margin-top: 0;              /* NOT SURE WHAT THIS IS DOING*/
+  }
+
+  #sign-up-cta .email {    
+    display: none;              /* REMOVE EMAIL FROM VIEW*/    
+  }
+
+  #sign-up-cta h1 { 
+    font-size: 3.125rem;
+  }
+
+  #sign-up-cta h2 {
+    font-size: 2.25rem;
+  }
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR - PHONE*/
+
+@media only screen and (max-width: 600px) {
+  #sign-up-section {  
+    height: 15rem;         /*THIS REDUCE THE SIZE OF THE CONTAINER*/
+    position: relative;
+    top: -40px;            /*THIS BRINGS IMAGE CLOSER TO HEADER*/
+  }
+
+  #sign-up-cta h1 {
+    font-size: 2.0rem;
+  }
+
+  #sign-up-cta h2 {
+    font-size: 2rem;
+  }
+}
+
+/*----------------------------------*/
+
+/* TODO FEATURE SECTION */
+
+#features-section {                   /*^THIS IS FEATURES MAIN CONTAINER*/
+  box-sizing: border-box;
+  display: flex; 
+  margin-top: 4rem;                       /*TOP MARGIN OFFSET*/
+  background-color: #f3f3f3;
+  /*border: 2px solid rgb(255, 0, 179);*/   /*//ADD BORDER FOR LOCATION*/
+}
+
+.feature {
+  padding-top: 2rem;                     /*IMAGES CONTAINER PADDING 32px*/
+  margin: 0px 1.25rem 2.87rem 1.25rem;   /*FEATURE CONTAINER MARGIN*/
+  background-color: white;
+  /*border: 2px solid red;*/               /*//ADD BORDER FOR LOCATION*/
+}
+
+.feature .image-container {
+  display: flex;
+  width: 90%;                            /*IMAGE CONTAINER 90% OF ITS CONTAINER*/
+  height: 65%;                           /*IMAGE CONTAINER 65% OF ITS CONTAINER*/
+  margin:  auto;
+  /*border: 2px solid rgb(60, 0, 255);*/   /*//ADD BORDER FOR LOCATION*/
+}
+
+.feature .content-fea {              /*FEATURE CONTENT TEXT*/
+  padding: 2.5rem 0;
+  /*border: 1px solid green;*/       /*//ADD BORDER FOR LOCATION*/
+}
+
+.feature h2 {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  padding-bottom: .7rem;
+  color: #4a4a4a;
+}
+
+.feature h3 {
+  font-family: "Roboto";
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 300;
+  justify-self: center;
+  color: #4a4a4a;
+  padding-left: 2rem;       /*TEXT PADDING ADJUSTED TO SCREEN*/
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+.image-container {
+  overflow: hidden;         /*IMAGE OVERFLOW*/
+}
+
+.image-container img {
+  display: flex;
+  max-width: 100%;          /*^IMAGE MAX-WIDTH INSIDE CONTAINER*/
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES - TABLET*/
+
+@media only screen and (max-width: 895px) {
+  #features-section {
+    margin-top: -40px;   /*THIS BRINGS IMAGE CLOSER TO THE BANNER*/
+    padding: 0rem;       /*PADDING FOR MAIN FEATURE CONTAINER*/
+  }
+
+  .feature {             
+    margin: 1rem .5rem;   /*SIDE MARGIN FOR FEATURE CONTAINER*/
+    padding: 1rem 0rem;       /*FEATURE PADDING*/
+  }
+
+  .feature .content-fea {
+    padding-top: 1rem;      /*FEATURE CONTENT PADDING*/
+  }
+
+  .feature h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .feature h3 {
+    font-size: .875rem;
+    line-height: 1.4;
+  }
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR - PHONE*/
+
+@media only screen and (max-width: 600px) {
+  #features-section {
+    flex-flow: column;    /*CHANGING FLEX FLOW WHEN USING PHONE*/
+    padding: 0px;
+  }
+
+  .feature {
+    margin: 0px;
+    padding: 1.25rem 1rem 0 1rem;
+  }
+
+  .feature .content {
+    padding: 1.25rem 0 1.875rem 0;
+  }
+}
+
+/*----------------------------------*/
+
+/* TODO - MAIN CONTENT FILTER*/
+
+#filters-section {              /*FILTER MAIN CONTAINER*/    
+  padding: 4rem 0;              /*TOP AND BOTTON PADDING 65px*/
+  background-color: #4a4a4a;
+  /*border: 2px solid red;*/      /*//ADD BORDER FOR LOCATION*/
+}                               
+
+#filters-section .content {     /*FILTER TEXT CONTAINER*/     
+  padding: 0 .625rem;           
+  margin-bottom: 5rem;          /*CONTENT MARGIN TO IMAGES 80px*/
+  /*border: 2px solid blue;*/     /*//ADD BORDER FOR LOCATION*/
+}
+
+#filters-section .content h2 {  
+  font-family: "Roboto";
+  font-size: 2.25rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  color: white;
+}
+
+#filters-section .content h3 {
+  font-family: "Roboto";
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 300;
+  color: white;
+}
+
+#filters-section .images-container {
+  display: flex;                        /*THIS ENSURES IMAGES ARE IN-LINE*/
+  max-width: 100%;
+  gap: 0.2rem;                          /*GAP BETWEEN THE IMAGES*/
+  padding: 0 1%;
+}
+
+#filters-section .images-container img {
+  border-radius: 3px;
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR - TABLET*/
+
+@media only screen and (max-width: 895px) and (min-width:601px) {  
+  #filters-section {           /*ADJUST SETTINGS FOR TABLET FILTERS PADDING*/
+    padding-bottom: 0px;
+    padding-top: 2rem;
+  }
+
+  #filters-section .content {
+    margin-bottom: 2rem;
+  }
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR - PHONE*/
+
+@media only screen and (max-width: 600px) {
+  #filters-section {
+    padding: 1rem 0 0 0;
+  }
+
+  #filters-section .content {
+    margin-bottom: 1rem;
+  }
+
+  #filters-section .content h2 {
+    padding-bottom: .625rem;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: normal;
+  }
+
+  #filters-section .content h3 {
+    font-size: .875rem;
+    line-height: 1.4;
+  }
+
+  #filters-section .images-container {
+    padding: 0;
+  }
+
+  #filters-section .extra {
+    display: none;              /*?THIS REMOVE THA LAST IMAGE FROM THE LIST*/
+  }
+}
+
+/*----------------------------------*/
+
+/*TODO - MAIN CONTENT QUOTES*/
+
+#quotes-section {
+  background-color: #f3f3f3;
+}
+
+#quotes-section .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+#quotes-section .quote {
+  padding-right: 1.875rem;
+  font-family: "Palatino", serif;
+  font-size: 1.875rem;
+  line-height: 1.1;
+  font-style: italic;
+  color: #4a4a4a;
+}
+
+#quotes-section .quote-citation {
+  height: 1.875rem;                  /*^IMAGE IN-LINE DUE TO FLEX AND HEIGHT CONTROL*/
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR - TABLET*/
+
+@media only screen and (max-width: 895px) {
+  #quotes-section .content {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR - PHONE*/
+
+@media only screen and (max-width: 600px) {
+  #quotes-section .content {
+    flex-flow: column;              /*CHANGE FLEX FLOW TO COLUMN*/
+    padding: 1.875rem .625rem;
+  }
+
+  #quotes-section .quote {
+    font-size: 1.5rem;              /*REDUCE FONT FOR MOBILE DEVICES*/
+    line-height: 1.4;
+  }
+
+  #quotes-section .quote-citation {
+    display: block;
+    padding-top: 1rem;
+    margin: auto;
+  }
+}
+
+/*----------------------------------*/
+
+/*TODO - MAIN CONTENT FOTTER*/
+
+footer {
+  background-color: #4a4a4a;
+}
+
+footer .content {
+  padding: 1.562rem;
+  font-family: "Roboto";
+  color: white;
+  display: flex;
+  font-size: .75rem;
+}
+
+footer .copyright {
+  flex-grow: 1;
+}
+
+/* TODO - MEDIA DIFFERENT DEVICES FOR - PHONE*/
+
+@media only screen and (max-width: 600px) {
+  footer .content {
+    font-size: .625rem;
+  }
+}
